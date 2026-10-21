@@ -1,0 +1,28 @@
+# secrets - never commit
+secrets.h
+.env
+*.local
+
+# python
+__pycache__/
+*.pyc
+.venv/
+
+# editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# logs and build output
+*.log
+build/
+node_modules/
+
+
+# credentials and private configuration
+.env.*
+!.env.example
+firebase-debug.log
+serviceAccountKey.json
+service-account*.json

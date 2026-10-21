@@ -1,0 +1,19 @@
+{
+  "rules": {
+    "potholes": {
+      ".read": true,
+      "$id": {
+        ".write": "!data.exists()",
+        ".validate": "newData.hasChildren(['latitude', 'longitude', 'severity', 'deltaG', 'timestamp'])",
+        "latitude":   { ".validate": "newData.isNumber() && newData.val() >= -90  && newData.val() <= 90" },
+        "longitude":  { ".validate": "newData.isNumber() && newData.val() >= -180 && newData.val() <= 180" },
+        "severity":   { ".validate": "newData.isNumber() && newData.val() >= 1 && newData.val() <= 5" },
+        "deltaG":     { ".validate": "newData.isNumber() && newData.val() >= 0" },
+        "satellites": { ".validate": "newData.isNumber() && newData.val() >= 0" },
+        "timestamp":  { ".validate": "newData.isNumber()" },
+        "source":     { ".validate": "newData.isString() && newData.val().length <= 20" },
+        "$other":     { ".validate": false }
+      }
+    }
+  }
+}
